@@ -63,7 +63,7 @@ namespace activityOne
             else
             {
                 myAlert.SetTitle("Logged In");
-                myAlert.SetMessage("Coming soon...");
+                myAlert.SetMessage("Coming soon!!!");
                 myAlert.SetPositiveButton("OK", OkAction);
                 Dialog myDialog = myAlert.Create();
                 myDialog.Show();
