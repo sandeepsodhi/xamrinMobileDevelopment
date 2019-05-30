@@ -2399,8 +2399,8 @@ namespace activityOne
 			// aapt resource value: 0x7f08005c
 			public const int action_mode_close_button = 2131230812;
 			
-			// aapt resource value: 0x7f0800b4
-			public const int action_settings = 2131230900;
+			// aapt resource value: 0x7f0800b9
+			public const int action_settings = 2131230905;
 			
 			// aapt resource value: 0x7f0800a0
 			public const int action_text = 2131230880;
@@ -2413,6 +2413,9 @@ namespace activityOne
 			
 			// aapt resource value: 0x7f080027
 			public const int add = 2131230759;
+			
+			// aapt resource value: 0x7f0800b4
+			public const int age = 2131230900;
 			
 			// aapt resource value: 0x7f080070
 			public const int alertTitle = 2131230832;
@@ -2437,6 +2440,9 @@ namespace activityOne
 			
 			// aapt resource value: 0x7f08003d
 			public const int bottom = 2131230781;
+			
+			// aapt resource value: 0x7f0800b5
+			public const int btnRegister = 2131230901;
 			
 			// aapt resource value: 0x7f080063
 			public const int buttonPanel = 2131230819;
@@ -2510,6 +2516,9 @@ namespace activityOne
 			// aapt resource value: 0x7f08007e
 			public const int edit_query = 2131230846;
 			
+			// aapt resource value: 0x7f0800b3
+			public const int email = 2131230899;
+			
 			// aapt resource value: 0x7f080030
 			public const int end = 2131230768;
 			
@@ -2530,6 +2539,9 @@ namespace activityOne
 			
 			// aapt resource value: 0x7f080072
 			public const int expanded_menu = 2131230834;
+			
+			// aapt resource value: 0x7f0800b1
+			public const int fName = 2131230897;
 			
 			// aapt resource value: 0x7f080050
 			public const int fill = 2131230800;
@@ -2579,6 +2591,9 @@ namespace activityOne
 			// aapt resource value: 0x7f080000
 			public const int item_touch_helper_previous_elevation = 2131230720;
 			
+			// aapt resource value: 0x7f0800b2
+			public const int lName = 2131230898;
+			
 			// aapt resource value: 0x7f080091
 			public const int largeLabel = 2131230865;
 			
@@ -2600,14 +2615,14 @@ namespace activityOne
 			// aapt resource value: 0x7f08008d
 			public const int login = 2131230861;
 			
-			// aapt resource value: 0x7f0800b3
-			public const int masked = 2131230899;
+			// aapt resource value: 0x7f0800b8
+			public const int masked = 2131230904;
 			
 			// aapt resource value: 0x7f0800a4
 			public const int media_actions = 2131230884;
 			
-			// aapt resource value: 0x7f0800b1
-			public const int message = 2131230897;
+			// aapt resource value: 0x7f0800b6
+			public const int message = 2131230902;
 			
 			// aapt resource value: 0x7f080031
 			public const int middle = 2131230769;
@@ -2864,8 +2879,8 @@ namespace activityOne
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int visible = 2131230898;
+			// aapt resource value: 0x7f0800b7
+			public const int visible = 2131230903;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;
@@ -3101,19 +3116,22 @@ namespace activityOne
 			public const int notification_template_part_time = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int select_dialog_item_material = 2130968633;
+			public const int registration = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int select_dialog_multichoice_material = 2130968634;
+			public const int select_dialog_item_material = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int select_dialog_singlechoice_material = 2130968635;
+			public const int select_dialog_multichoice_material = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int support_simple_spinner_dropdown_item = 2130968636;
+			public const int select_dialog_singlechoice_material = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int tooltip = 2130968637;
+			public const int support_simple_spinner_dropdown_item = 2130968637;
+			
+			// aapt resource value: 0x7f04003e
+			public const int tooltip = 2130968638;
 			
 			static Layout()
 			{

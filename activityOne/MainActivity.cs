@@ -16,6 +16,8 @@ namespace activityOne
         EditText name;
         EditText password;
         Button loginBtn;
+        Button signUpbtn;
+
         Android.App.AlertDialog.Builder myAlert;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -30,24 +32,52 @@ namespace activityOne
 
             loginBtn.Click += myButtonClick;
 
+            signUpbtn = FindViewById<Button>(Resource.Id.signUp);
+
+            signUpbtn.Click += SignUpbtnClick;
+
+        }
+
+        private void SignUpbtnClick(object sender, EventArgs e)
+        {
+            Intent i = new Intent(this, typeof(register));
+            StartActivity(i);
         }
 
         private void myButtonClick(object sender, EventArgs e)
         {
-            var nameVar = name.Text;
-            var passwordVar = password.Text;
+            var vName = name.Text;
+            var vPassword= password.Text;
 
             myAlert = new Android.App.AlertDialog.Builder(this);
 
             
-            if(nameVar == " "  || nameVar.Equals(""))
+            if(vName == " "  || vName.Equals(""))
             {
-                myAlert.SetTitle("Error");
-                myAlert.SetMessage("Please enter a username.");
+                errorMessageDialog("username");
+            
+            }else if(vPassword == " " || vPassword.Equals(""))
+            {
+                errorMessageDialog("password");
+            }
+            else
+            {
+                myAlert.SetTitle("Logged In");
+                myAlert.SetMessage("Coming soon...");
                 myAlert.SetPositiveButton("OK", OkAction);
                 Dialog myDialog = myAlert.Create();
                 myDialog.Show();
             }
+
+        }
+
+        private void errorMessageDialog(string msg)
+        {
+            myAlert.SetTitle("Error");
+            myAlert.SetMessage("Please enter a " + msg);
+            myAlert.SetPositiveButton("OK", OkAction);
+            Dialog myDialog = myAlert.Create();
+            myDialog.Show();
         }
 
         private void OkAction(object sender, DialogClickEventArgs e)
