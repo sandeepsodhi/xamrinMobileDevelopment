@@ -17,13 +17,17 @@ namespace activityOne
     { 
         EditText fnameE, lnameE, ageE, passwordE, emailE;
         Button btnRegisterE;
+        DBHelper myDbInstace;
         Android.App.AlertDialog.Builder myAlert;
 
         protected override void OnCreate(Bundle savedInstanceState)
+
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.registration);
+
+            myDbInstace = new DBHelper(this);
 
             fnameE = FindViewById<EditText>(Resource.Id.fName);
             lnameE = FindViewById<EditText>(Resource.Id.lName);
@@ -34,8 +38,7 @@ namespace activityOne
             btnRegisterE = FindViewById<Button>(Resource.Id.btnRegister);
 
             btnRegisterE.Click += BtnRegisterE_Click;
-            
-            // Create your application here
+
         }
 
         private void BtnRegisterE_Click(object sender, EventArgs e)
@@ -70,11 +73,17 @@ namespace activityOne
             }
             else
             {
+                myDbInstace.insertMyValue(vfname, vlname, vemail , vage, vpassword);
+
+
                 myAlert.SetTitle("Registered");
                 myAlert.SetMessage("You have registered successfully");
                 myAlert.SetPositiveButton("OK", OkAction);
                 Dialog myDialog = myAlert.Create();
                 myDialog.Show();
+
+                myDbInstace.selectMyValues();
+
             }
 
         }
