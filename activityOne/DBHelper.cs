@@ -74,6 +74,23 @@ namespace activityOne
             }
         }
 
+        public bool validateLogin(string email, string password)
+        {
+            string loginStmt = "Select " + ColumnEmail + " from " + TableName + " where " +ColumnEmail + "=" + "'" + email + "' and "+ columnPassword + "= '"+  password +"'";
+
+            ICursor result = myDBObj.RawQuery(loginStmt, null);
+
+            if (result.Count > 0)
+            {
+                System.Console.WriteLine("Email found");
+                return true;
+            }
+            else
+            {
+                System.Console.WriteLine("Not Email found");
+                return false;
+            }
+        }
 
         public void insertMyValue(string vfname, string vlname, string vemail, string vage, string vpassword)
         {

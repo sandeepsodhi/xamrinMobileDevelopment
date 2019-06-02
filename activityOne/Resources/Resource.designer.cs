@@ -2399,8 +2399,8 @@ namespace activityOne
 			// aapt resource value: 0x7f08005c
 			public const int action_mode_close_button = 2131230812;
 			
-			// aapt resource value: 0x7f0800b9
-			public const int action_settings = 2131230905;
+			// aapt resource value: 0x7f0800ba
+			public const int action_settings = 2131230906;
 			
 			// aapt resource value: 0x7f0800a0
 			public const int action_text = 2131230880;
@@ -2615,8 +2615,8 @@ namespace activityOne
 			// aapt resource value: 0x7f08008d
 			public const int login = 2131230861;
 			
-			// aapt resource value: 0x7f0800b8
-			public const int masked = 2131230904;
+			// aapt resource value: 0x7f0800b9
+			public const int masked = 2131230905;
 			
 			// aapt resource value: 0x7f0800a4
 			public const int media_actions = 2131230884;
@@ -2879,8 +2879,11 @@ namespace activityOne
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
+			// aapt resource value: 0x7f0800b8
+			public const int visible = 2131230904;
+			
 			// aapt resource value: 0x7f0800b7
-			public const int visible = 2131230903;
+			public const int welcomMessage = 2131230903;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;
@@ -3132,6 +3135,9 @@ namespace activityOne
 			
 			// aapt resource value: 0x7f04003e
 			public const int tooltip = 2130968638;
+			
+			// aapt resource value: 0x7f04003f
+			public const int welcome = 2130968639;
 			
 			static Layout()
 			{

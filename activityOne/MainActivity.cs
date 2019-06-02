@@ -15,10 +15,13 @@ namespace activityOne
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : Activity
     {
-        EditText name;
+        EditText email;
         EditText password;
         Button loginBtn;
         Button signUpbtn;
+        DBHelper myDbInstace;
+
+        Intent i;
 
         Android.App.AlertDialog.Builder myAlert;
 
@@ -27,7 +30,10 @@ namespace activityOne
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-            name = FindViewById<EditText>(Resource.Id.userName);
+            myDbInstace = new DBHelper(this);
+
+
+            email = FindViewById<EditText>(Resource.Id.userName);
             password = FindViewById<EditText>(Resource.Id.password);
 
             loginBtn = FindViewById<Button>(Resource.Id.login);
@@ -42,13 +48,13 @@ namespace activityOne
 
         private void SignUpbtnClick(object sender, EventArgs e)
         {
-            Intent i = new Intent(this, typeof(register));
+            i = new Intent(this, typeof(register));
             StartActivity(i);
         }
 
         private void myButtonClick(object sender, EventArgs e)
         {
-            var vName = name.Text;
+            var vName = email.Text;
             var vPassword= password.Text;
 
             myAlert = new Android.App.AlertDialog.Builder(this);
@@ -64,13 +70,22 @@ namespace activityOne
             }
             else
             {
-                myAlert.SetTitle("Logged In");
-                myAlert.SetMessage("Coming soon!!!");
-                myAlert.SetPositiveButton("OK", OkAction);
-                Dialog myDialog = myAlert.Create();
-                myDialog.Show();
+                bool flag = myDbInstace.validateLogin(vName, vPassword);
+                if (flag)
+                {
+                    i = new Intent(this, typeof(welcomeScreen));
+                    i.PutExtra("name", vName);
+                    StartActivity(i);
+                }
+                else
+                {
+                    myAlert.SetTitle("Error!!!");
+                    myAlert.SetMessage("Invalid Username or password");
+                    myAlert.SetPositiveButton("OK", OkAction);
+                    Dialog myDialog = myAlert.Create();
+                    myDialog.Show();
+                }
             }
-
         }
 
         private void errorMessageDialog(string msg)
