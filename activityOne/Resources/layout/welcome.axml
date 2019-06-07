@@ -9,7 +9,7 @@
         android:id="@+id/welcomMessage"
         android:text="Welcome,"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:minWidth="25px"
         android:minHeight="25px"
         android:textSize="33dp"
@@ -17,12 +17,69 @@
         android:textStyle="bold"
         android:gravity="center"
     />
-    
-        
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        >
+        <EditText
+            android:id="@+id/fNameEdit"
+            android:layout_width="156dp"
+            android:layout_height="45dp"
+            android:hint="  First Name"
+            android:background="#fefefe"
+        />
+        <EditText
+            android:id="@+id/lNameEdit"
+            android:layout_width="156dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="5dp"
+            android:hint="  Last Name"
+            android:background="#fefefe"
+        />
+    </LinearLayout>
 
+      <EditText
+            android:id="@+id/emailEdit"
+        android:layout_marginTop="6dp"
+            android:layout_width = "320dp"
+        android:layout_height="45dp"
+            android:background = "#FEFEFB"
+            android:hint= "  User name or Email"
+            android:layout_gravity="center"
+         />
 
-
-
+        <EditText
+            android:id="@+id/passwordEdit"
+            android:layout_gravity="center"
+        android:layout_height="45dp"
+            android:layout_width = "320dp"
+            android:layout_marginTop = "5dp"
+            android:background = "#FEFEFB"
+            android:hint= "  Password"
+            android:inputType="textPassword"
+         />
+        <EditText
+            android:id="@+id/ageEdit"
+            android:layout_width="320dp"
+        android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:background="#fefefe"
+            android:layout_marginTop="5dp"
+            android:hint="  Age"
+        />
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content" 
+            android:text="Edit"
+            android:layout_gravity="center"
+            android:background="#B2DFB3"
+        android:layout_marginTop="20dp"
+            
+    />
 
 
 </LinearLayout>

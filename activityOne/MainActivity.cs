@@ -70,11 +70,12 @@ namespace activityOne
             }
             else
             {
-                bool flag = myDbInstace.validateLogin(vName, vPassword);
-                if (flag)
+                int IDfromDB = myDbInstace.validateLogin(vName, vPassword);
+                if (IDfromDB != 0)
                 {
+
                     i = new Intent(this, typeof(welcomeScreen));
-                    i.PutExtra("name", vName);
+                    i.PutExtra("id", IDfromDB.ToString());
                     StartActivity(i);
                 }
                 else

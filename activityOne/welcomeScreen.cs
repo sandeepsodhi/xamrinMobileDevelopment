@@ -15,14 +15,25 @@ namespace activityOne
     [Activity(Label = "welcomeScreen")]
     public class welcomeScreen : Activity
     {
+        DBHelper myDbInstace;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.welcome);
 
-            string nameText = Intent.GetStringExtra("name");
+            string id = Intent.GetStringExtra("id");
             TextView name = FindViewById<TextView>(Resource.Id.welcomMessage);
-            name.Text = "Welcome " + nameText;
+
+            myDbInstace = new DBHelper(this);
+
+            user userInfo = myDbInstace.selectMyValues(id);
+
+
+
+            name.Text = "Welcome " + userInfo.fname + "Welcome " + userInfo.lname + "Welcome " + userInfo.email + "Welcome " + userInfo.password + "Welcome " + userInfo.age;
+
+
         }
     }
 }

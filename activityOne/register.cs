@@ -85,8 +85,6 @@ namespace activityOne
                 Intent i = new Intent(this, typeof(MainActivity));
                 StartActivity(i);
 
-                myDbInstace.selectMyValues();
-
             }
 
         }

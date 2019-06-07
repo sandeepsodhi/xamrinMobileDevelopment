@@ -52,12 +52,14 @@ namespace activityOne
 
         }
 
-        public void selectMyValues()
+        public user selectMyValues(string id)
         {
 
-            String sqlQuery = "Select * from " + TableName;
+            String sqlQuery = "Select * from " + TableName + " where "+ ColumnID + " = " + id;
 
             ICursor result = myDBObj.RawQuery(sqlQuery, null);
+
+            user userInfo = new user();
 
             while (result.MoveToNext())
             {
@@ -69,26 +71,38 @@ namespace activityOne
                 var ageFromDb = result.GetString(result.GetColumnIndexOrThrow(columnAge));
                 var passwordFromDb = result.GetString(result.GetColumnIndexOrThrow(columnPassword));
 
-                System.Console.WriteLine(" Value fROM DB --> " + IDfromDB + "  " + fNameFromDb + "  " + lNameFromDb + "  " + emailFromDb + "  " + ageFromDb + "  " + passwordFromDb);
+                userInfo.fname = fNameFromDb;
+                userInfo.lname = lNameFromDb;
+                userInfo.email = emailFromDb;
+                userInfo.age = ageFromDb;
+                userInfo.password = passwordFromDb;
 
+                System.Console.WriteLine(" Value fROM DB --> " + IDfromDB + "  " + fNameFromDb + "  " + lNameFromDb + "  " + emailFromDb + "  " + ageFromDb + "  " + passwordFromDb);
             }
+            return userInfo;
         }
 
-        public bool validateLogin(string email, string password)
+        public int validateLogin(string email, string password)
         {
-            string loginStmt = "Select " + ColumnEmail + " from " + TableName + " where " +ColumnEmail + "=" + "'" + email + "' and "+ columnPassword + "= '"+  password +"'";
+            String loginStmt = "Select " + ColumnID + " from " + TableName + " where " +ColumnEmail + "=" + "'" + email + "' and "+ columnPassword + "= '"+  password +"'";
 
             ICursor result = myDBObj.RawQuery(loginStmt, null);
 
+            int IDfromDB = 0;
+
             if (result.Count > 0)
             {
+                while (result.MoveToNext())
+                {
+                    IDfromDB = result.GetInt(result.GetColumnIndexOrThrow(ColumnID));
+                }
                 System.Console.WriteLine("Email found");
-                return true;
+                return IDfromDB;
             }
             else
             {
                 System.Console.WriteLine("Not Email found");
-                return false;
+                return IDfromDB;
             }
         }
 

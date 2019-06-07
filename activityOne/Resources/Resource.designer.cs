@@ -2399,8 +2399,8 @@ namespace activityOne
 			// aapt resource value: 0x7f08005c
 			public const int action_mode_close_button = 2131230812;
 			
-			// aapt resource value: 0x7f0800ba
-			public const int action_settings = 2131230906;
+			// aapt resource value: 0x7f0800c0
+			public const int action_settings = 2131230912;
 			
 			// aapt resource value: 0x7f0800a0
 			public const int action_text = 2131230880;
@@ -2416,6 +2416,9 @@ namespace activityOne
 			
 			// aapt resource value: 0x7f0800b4
 			public const int age = 2131230900;
+			
+			// aapt resource value: 0x7f0800bc
+			public const int ageEdit = 2131230908;
 			
 			// aapt resource value: 0x7f080070
 			public const int alertTitle = 2131230832;
@@ -2443,6 +2446,9 @@ namespace activityOne
 			
 			// aapt resource value: 0x7f0800b5
 			public const int btnRegister = 2131230901;
+			
+			// aapt resource value: 0x7f0800bd
+			public const int btnUpdate = 2131230909;
 			
 			// aapt resource value: 0x7f080063
 			public const int buttonPanel = 2131230819;
@@ -2519,6 +2525,9 @@ namespace activityOne
 			// aapt resource value: 0x7f0800b3
 			public const int email = 2131230899;
 			
+			// aapt resource value: 0x7f0800ba
+			public const int emailEdit = 2131230906;
+			
 			// aapt resource value: 0x7f080030
 			public const int end = 2131230768;
 			
@@ -2542,6 +2551,9 @@ namespace activityOne
 			
 			// aapt resource value: 0x7f0800b1
 			public const int fName = 2131230897;
+			
+			// aapt resource value: 0x7f0800b8
+			public const int fNameEdit = 2131230904;
 			
 			// aapt resource value: 0x7f080050
 			public const int fill = 2131230800;
@@ -2594,6 +2606,9 @@ namespace activityOne
 			// aapt resource value: 0x7f0800b2
 			public const int lName = 2131230898;
 			
+			// aapt resource value: 0x7f0800b9
+			public const int lNameEdit = 2131230905;
+			
 			// aapt resource value: 0x7f080091
 			public const int largeLabel = 2131230865;
 			
@@ -2615,8 +2630,8 @@ namespace activityOne
 			// aapt resource value: 0x7f08008d
 			public const int login = 2131230861;
 			
-			// aapt resource value: 0x7f0800b9
-			public const int masked = 2131230905;
+			// aapt resource value: 0x7f0800bf
+			public const int masked = 2131230911;
 			
 			// aapt resource value: 0x7f0800a4
 			public const int media_actions = 2131230884;
@@ -2665,6 +2680,9 @@ namespace activityOne
 			
 			// aapt resource value: 0x7f08008c
 			public const int password = 2131230860;
+			
+			// aapt resource value: 0x7f0800bb
+			public const int passwordEdit = 2131230907;
 			
 			// aapt resource value: 0x7f08004d
 			public const int pin = 2131230797;
@@ -2879,8 +2897,8 @@ namespace activityOne
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800b8
-			public const int visible = 2131230904;
+			// aapt resource value: 0x7f0800be
+			public const int visible = 2131230910;
 			
 			// aapt resource value: 0x7f0800b7
 			public const int welcomMessage = 2131230903;
