@@ -2399,8 +2399,8 @@ namespace activityOne
 			// aapt resource value: 0x7f08005c
 			public const int action_mode_close_button = 2131230812;
 			
-			// aapt resource value: 0x7f0800c0
-			public const int action_settings = 2131230912;
+			// aapt resource value: 0x7f0800c1
+			public const int action_settings = 2131230913;
 			
 			// aapt resource value: 0x7f0800a0
 			public const int action_text = 2131230880;
@@ -2443,6 +2443,9 @@ namespace activityOne
 			
 			// aapt resource value: 0x7f08003d
 			public const int bottom = 2131230781;
+			
+			// aapt resource value: 0x7f0800be
+			public const int btnDelete = 2131230910;
 			
 			// aapt resource value: 0x7f0800b5
 			public const int btnRegister = 2131230901;
@@ -2630,8 +2633,8 @@ namespace activityOne
 			// aapt resource value: 0x7f08008d
 			public const int login = 2131230861;
 			
-			// aapt resource value: 0x7f0800bf
-			public const int masked = 2131230911;
+			// aapt resource value: 0x7f0800c0
+			public const int masked = 2131230912;
 			
 			// aapt resource value: 0x7f0800a4
 			public const int media_actions = 2131230884;
@@ -2897,8 +2900,8 @@ namespace activityOne
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800be
-			public const int visible = 2131230910;
+			// aapt resource value: 0x7f0800bf
+			public const int visible = 2131230911;
 			
 			// aapt resource value: 0x7f0800b7
 			public const int welcomMessage = 2131230903;

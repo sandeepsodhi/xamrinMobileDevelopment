@@ -109,20 +109,31 @@ namespace activityOne
         public void insertMyValue(string vfname, string vlname, string vemail, string vage, string vpassword)
         {
 
-            String insertSQL = "insert into " + TableName + "(" + ColumnfName + "," + ColumnlName + "," + ColumnEmail + "," + columnAge + ","  + columnPassword + ") values ('" + vfname + "'" + "," + "'" + vlname + "'," + "'" + vemail + "',"  +  vage  + ",'" + vpassword + "'" +   ");";
+            String insertSQL = "insert into " + TableName + "(" + ColumnfName + "," + ColumnlName + "," + ColumnEmail + "," + columnAge + "," + columnPassword + ") values ('" + vfname + "'" + "," + "'" + vlname + "'," + "'" + vemail + "'," + vage + ",'" + vpassword + "'" + ");";
 
             System.Console.WriteLine("Insert SQL " + insertSQL);
             myDBObj.ExecSQL(insertSQL);
 
-        }
 
-        internal void updateData(string id, string vfname, string vlname, string vage, string vpassword, string vemail)
+        }
+        
+        public void updateData(string id, string vfname, string vlname, string vage, string vpassword, string vemail)
         {
             String updateSQL = "update  " + TableName + " set " + ColumnfName + " = '" + vfname + "' , " + ColumnlName + " ='" + vlname + "' ," + ColumnEmail + " ='" + vemail + "' , " + columnAge + " ='" + vage + "' , " + columnPassword + " ='" + vpassword + "'  where "+ ColumnID + "=" +Convert.ToInt32(id);
 
             System.Console.WriteLine("Insert SQL " + updateSQL);
             myDBObj.ExecSQL(updateSQL);
         }
+
+        public void deleteData(string id)
+        {
+            String deleteSQL = "delete from " + TableName + " where " + ColumnID + " = " + Convert.ToInt32(id);
+
+            System.Console.WriteLine("Delete SQL " + deleteSQL);
+            myDBObj.ExecSQL(deleteSQL);
+
+        }
+
 
 
         public override void OnUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)

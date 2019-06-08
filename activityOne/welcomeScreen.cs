@@ -22,8 +22,9 @@ namespace activityOne
         EditText emailEdit;
         EditText ageEdit;
         EditText passwordEdit;
-        string id;
+        Button updateBtn, deleteBtn;
 
+        string id;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -37,15 +38,10 @@ namespace activityOne
             emailEdit = FindViewById<EditText>(Resource.Id.emailEdit);
             ageEdit = FindViewById<EditText>(Resource.Id.ageEdit);
             passwordEdit = FindViewById<EditText>(Resource.Id.passwordEdit);
-
-            fnameEdit.Enabled = false;
-            lnameEdit.Enabled = false;
-            emailEdit.Enabled = false;
-            ageEdit.Enabled = false;
-            passwordEdit.Enabled = false;
+            
+            EnabledisableEditBox(false);
 
             myDbInstace = new DBHelper(this);
-
             user userInfo = myDbInstace.selectMyValues(id);
 
             welcomeMessageText.Text = "Welcome " + userInfo.fname;
@@ -55,23 +51,19 @@ namespace activityOne
             ageEdit.Text = userInfo.age;
             passwordEdit.Text = userInfo.password;
 
-            Button updateBtn = FindViewById<Button>(Resource.Id.btnUpdate);
-
+            updateBtn = FindViewById<Button>(Resource.Id.btnUpdate);
             updateBtn.Click += updateInfo;
 
-
-
+            deleteBtn = FindViewById<Button>(Resource.Id.btnDelete);
+            deleteBtn.Click += deleteRecord;
         }
 
         private void updateInfo(object sender, EventArgs e)
         {
             if (!fnameEdit.Enabled)
             {
-                fnameEdit.Enabled = true;
-                lnameEdit.Enabled = true;
-                emailEdit.Enabled = true;
-                ageEdit.Enabled = true;
-                passwordEdit.Enabled = true;
+                EnabledisableEditBox(true);
+                updateBtn.Text = "Update";
             }
             else
             {
@@ -80,11 +72,29 @@ namespace activityOne
                 var vage = ageEdit.Text;
                 var vpassword = passwordEdit.Text;
                 var vemail = emailEdit.Text;
-
                 myDbInstace.updateData(id, vfname, vlname, vage, vpassword, vemail);
-                
+                updateBtn.Text = "Edit";
+                EnabledisableEditBox(false);
+                Toast.MakeText(this, "Update successfull",ToastLength.Long).Show();
+;            }
+        }
 
-            }
+        private void deleteRecord(object sender, EventArgs e)
+        {
+            myDbInstace.deleteData(id);
+            Toast.MakeText(this, "Deletion successful", ToastLength.Long).Show();
+
+            Intent i = new Intent(this, typeof(MainActivity));
+            StartActivity(i);
+        }
+
+        private void EnabledisableEditBox(bool flag)
+        {
+            fnameEdit.Enabled = flag;
+            lnameEdit.Enabled = flag;
+            emailEdit.Enabled = flag;
+            ageEdit.Enabled = flag;
+            passwordEdit.Enabled = flag;
         }
     }
 }

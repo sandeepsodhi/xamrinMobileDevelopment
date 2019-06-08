@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 
 namespace activityOne
@@ -75,18 +69,11 @@ namespace activityOne
             {
                 myDbInstace.insertMyValue(vfname, vlname, vemail , vage, vpassword);
 
-
-                myAlert.SetTitle("Registered");
-                myAlert.SetMessage("You have registered successfully");
-                myAlert.SetPositiveButton("OK", OkAction);
-                Dialog myDialog = myAlert.Create();
-                myDialog.Show();
+                Toast.MakeText(this, "Registration Succesfull!!",ToastLength.Long).Show(); 
 
                 Intent i = new Intent(this, typeof(MainActivity));
                 StartActivity(i);
-
             }
-
         }
 
         private void errorMessageDialog(string msg)
