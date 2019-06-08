@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:minWidth="25px"
         android:minHeight="25px"
+        android:layout_marginTop="65dp"
         android:textSize="33dp"
         android:textColor="#FEFEFB"
         android:textStyle="bold"

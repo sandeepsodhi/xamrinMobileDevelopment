@@ -116,6 +116,14 @@ namespace activityOne
 
         }
 
+        internal void updateData(string id, string vfname, string vlname, string vage, string vpassword, string vemail)
+        {
+            String updateSQL = "update  " + TableName + " set " + ColumnfName + " = '" + vfname + "' , " + ColumnlName + " ='" + vlname + "' ," + ColumnEmail + " ='" + vemail + "' , " + columnAge + " ='" + vage + "' , " + columnPassword + " ='" + vpassword + "'  where "+ ColumnID + "=" +Convert.ToInt32(id);
+
+            System.Console.WriteLine("Insert SQL " + updateSQL);
+            myDBObj.ExecSQL(updateSQL);
+        }
+
 
         public override void OnUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
         {
