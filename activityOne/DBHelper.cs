@@ -82,6 +82,13 @@ namespace activityOne
             return userInfo;
         }
 
+        public ICursor showAllData()
+        {
+            String selectAllSQL = "select * from " + TableName;
+            return myDBObj.RawQuery(selectAllSQL, null);
+        }
+
+
         public int validateLogin(string email, string password)
         {
             String loginStmt = "Select " + ColumnID + " from " + TableName + " where " +ColumnEmail + "=" + "'" + email + "' and "+ columnPassword + "= '"+  password +"'";
@@ -133,8 +140,6 @@ namespace activityOne
             myDBObj.ExecSQL(deleteSQL);
 
         }
-
-
 
         public override void OnUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
         {

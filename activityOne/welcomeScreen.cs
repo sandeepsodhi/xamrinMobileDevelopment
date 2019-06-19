@@ -22,7 +22,7 @@ namespace activityOne
         EditText emailEdit;
         EditText ageEdit;
         EditText passwordEdit;
-        Button updateBtn, deleteBtn;
+        Button updateBtn, deleteBtn, allUsersBtn;
 
         string id;
 
@@ -56,6 +56,17 @@ namespace activityOne
 
             deleteBtn = FindViewById<Button>(Resource.Id.btnDelete);
             deleteBtn.Click += deleteRecord;
+
+            allUsersBtn = FindViewById<Button>(Resource.Id.btnAllUsers);
+            allUsersBtn.Click += AllUsersBtn_Click;
+
+        }
+
+        private void AllUsersBtn_Click(object sender, EventArgs e)
+        {
+            Intent i = new Intent(this, typeof(showUsers));
+            StartActivity(i);
+
         }
 
         private void updateInfo(object sender, EventArgs e)
