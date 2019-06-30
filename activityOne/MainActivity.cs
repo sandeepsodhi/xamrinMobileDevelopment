@@ -35,15 +35,11 @@ namespace activityOne
 
             email = FindViewById<EditText>(Resource.Id.userName);
             password = FindViewById<EditText>(Resource.Id.password);
-
             loginBtn = FindViewById<Button>(Resource.Id.login);
-
-            loginBtn.Click += myButtonClick;
-
             signUpbtn = FindViewById<Button>(Resource.Id.signUp);
 
+            loginBtn.Click += myButtonClick;
             signUpbtn.Click += SignUpbtnClick;
-
         }
 
         private void SignUpbtnClick(object sender, EventArgs e)

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "activityOne", "activityOne\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week5", "Week5\Week5.csproj", "{6A1485B7-14DA-4684-9EDE-347DDCE5812A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomListView", "CustomListView\CustomListView.csproj", "{3C1DC38F-8F52-44DC-A54F-B4B3117F6098}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,12 @@ Global
 		{6A1485B7-14DA-4684-9EDE-347DDCE5812A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A1485B7-14DA-4684-9EDE-347DDCE5812A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6A1485B7-14DA-4684-9EDE-347DDCE5812A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3C1DC38F-8F52-44DC-A54F-B4B3117F6098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C1DC38F-8F52-44DC-A54F-B4B3117F6098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C1DC38F-8F52-44DC-A54F-B4B3117F6098}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3C1DC38F-8F52-44DC-A54F-B4B3117F6098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C1DC38F-8F52-44DC-A54F-B4B3117F6098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C1DC38F-8F52-44DC-A54F-B4B3117F6098}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
