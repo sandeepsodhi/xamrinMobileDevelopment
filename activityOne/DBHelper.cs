@@ -59,7 +59,7 @@ namespace activityOne
 
             ICursor result = myDBObj.RawQuery(sqlQuery, null);
 
-            user userInfo = new user();
+            user userInfo = null;
 
             while (result.MoveToNext())
             {
@@ -71,11 +71,7 @@ namespace activityOne
                 var ageFromDb = result.GetString(result.GetColumnIndexOrThrow(columnAge));
                 var passwordFromDb = result.GetString(result.GetColumnIndexOrThrow(columnPassword));
 
-                userInfo.fname = fNameFromDb;
-                userInfo.lname = lNameFromDb;
-                userInfo.email = emailFromDb;
-                userInfo.age = ageFromDb;
-                userInfo.password = passwordFromDb;
+                userInfo = new user(fNameFromDb, lNameFromDb, emailFromDb, passwordFromDb, ageFromDb);
 
                 System.Console.WriteLine(" Value fROM DB --> " + IDfromDB + "  " + fNameFromDb + "  " + lNameFromDb + "  " + emailFromDb + "  " + ageFromDb + "  " + passwordFromDb);
             }

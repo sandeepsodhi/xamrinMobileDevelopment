@@ -12,12 +12,22 @@ using Android.Widget;
 
 namespace activityOne
 {
-    public struct user
+    public class user
     {
         public string fname;
         public string lname;
         public string email;
         public string password;
         public string age;
+
+        public user(string fNameC, string lNameC, string emailC, string passwordC, string ageC)
+        {
+            this.fname = fNameC;
+            this.lname = lNameC;
+            this.email = emailC;
+            this.password = passwordC;
+            this.age = ageC;
+        }
+
     }
 }

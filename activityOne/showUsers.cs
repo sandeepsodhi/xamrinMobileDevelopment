@@ -18,9 +18,10 @@ namespace activityOne
     {
         ListView myListView;
         SearchView mySearchView;
-        ArrayAdapter myAdapter;
+        //ArrayAdapter myAdapter;
         DBHelper myDbInstance;
-        List<string> stringArray = new List<string>();
+        //List<string> stringArray = new List<string>();
+        List<user> myUserList = new List<user>();      
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -37,11 +38,18 @@ namespace activityOne
 
             while (result.MoveToNext())
             {
-                stringArray.Add(result.GetString(result.GetColumnIndexOrThrow("fname")));
+                var fNameFromDb = result.GetString(result.GetColumnIndexOrThrow("fname"));
+                var lNameFromDb = result.GetString(result.GetColumnIndexOrThrow("lname"));
+                var emailFromDb = result.GetString(result.GetColumnIndexOrThrow("emails"));
+                var ageFromDb = result.GetString(result.GetColumnIndexOrThrow("age"));
+                var passwordFromDb = result.GetString(result.GetColumnIndexOrThrow("password"));
 
+                //stringArray.Add(result.GetString(result.GetColumnIndexOrThrow("fname")));
+                myUserList.Add(new user(fNameFromDb, lNameFromDb, emailFromDb, passwordFromDb, ageFromDb));
             }
 
-            myAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, stringArray);
+            //myAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, stringArray);
+            var myAdapter = new CustomAdapter(this, myUserList);
 
             myListView.Adapter = myAdapter;
             myListView.ItemClick += MyListView_ItemClick;
@@ -54,17 +62,28 @@ namespace activityOne
             string searchValue = e.NewText;
             System.Console.WriteLine("value is: " + searchValue);
 
-            List<string> newStringArray = new List<string>();
+            //List<string> newStringArray = new List<string>();
+            List<user> newUsers = new List<user>();
 
-            foreach (string str in stringArray)
+            //foreach (string str in stringArray)
+            //{
+            //    if (str.Contains(searchValue))
+            //    {
+            //        newStringArray.Add(str.ToString());
+            //    }
+            //}
+
+            foreach (user userObj in myUserList)
             {
-                if (str.Contains(searchValue))
+                if(userObj.fname.Contains(searchValue) || userObj.lname.Contains(searchValue))
                 {
-                    newStringArray.Add(str.ToString());
+                    newUsers.Add(userObj);
                 }
             }
 
-            myAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, newStringArray);
+            //myAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, newStringArray);
+
+            var myAdapter = new CustomAdapter(this, newUsers);
             myListView.Adapter = myAdapter;
 
         }
@@ -72,7 +91,7 @@ namespace activityOne
         private void MyListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             var index = e.Position;
-            var myValue = stringArray[index];
+        //    var myValue = stringArray[index];
         }
     }
 }
