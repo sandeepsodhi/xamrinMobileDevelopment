@@ -64,7 +64,7 @@ namespace activityOne
 
         private void AllUsersBtn_Click(object sender, EventArgs e)
         {
-            Intent i = new Intent(this, typeof(showUsers));
+            Intent i = new Intent(this, typeof(tabLayout));
             StartActivity(i);
 
         }

@@ -13,27 +13,36 @@ using Android.Widget;
 
 namespace activityOne
 {
-    [Activity(Label = "showUsers")]
-    public class showUsers : Activity
+    class showUsersFragment : Fragment
     {
         ListView myListView;
         SearchView mySearchView;
         //ArrayAdapter myAdapter;
         DBHelper myDbInstance;
         //List<string> stringArray = new List<string>();
-        List<user> myUserList = new List<user>();      
+        List<user> myUserList = new List<user>();
+        Android.App.AlertDialog.Builder myAlert;
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.showUsers);
 
-            myDbInstance = new DBHelper(this);
+            // Create your fragment here
+        }
 
-            myListView = FindViewById<ListView>(Resource.Id.listView1);
-            mySearchView = FindViewById<SearchView>(Resource.Id.searchView1);
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+            // Use this to return your custom view for this Fragment
+            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
 
-            ICursor result =  myDbInstance.showAllData();
+            View myView = inflater.Inflate(Resource.Layout.showUsers, container, false);
+
+            myDbInstance = new DBHelper(Activity);
+
+            myListView = myView.FindViewById<ListView>(Resource.Id.listView1);
+            mySearchView = myView.FindViewById<SearchView>(Resource.Id.searchView1);
+
+            ICursor result = myDbInstance.showAllData();
 
             while (result.MoveToNext())
             {
@@ -48,12 +57,15 @@ namespace activityOne
             }
 
             //myAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, stringArray);
-            var myAdapter = new CustomAdapter(this, myUserList);
+            var myAdapter = new CustomAdapter(Activity, myUserList);
 
             myListView.Adapter = myAdapter;
             myListView.ItemClick += MyListView_ItemClick;
             mySearchView.QueryTextChange += MySearchView_QueryTextChange;
-            // Create your application here
+
+
+            return myView;
+            //            return base.OnCreateView(inflater, container, savedInstanceState);
         }
 
         private void MySearchView_QueryTextChange(object sender, SearchView.QueryTextChangeEventArgs e)
@@ -74,7 +86,7 @@ namespace activityOne
 
             foreach (user userObj in myUserList)
             {
-                if(userObj.fname.Contains(searchValue) || userObj.lname.Contains(searchValue))
+                if (userObj.fname.Contains(searchValue) || userObj.lname.Contains(searchValue))
                 {
                     newUsers.Add(userObj);
                 }
@@ -82,7 +94,7 @@ namespace activityOne
 
             //myAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, newStringArray);
 
-            var myAdapter = new CustomAdapter(this, newUsers);
+            var myAdapter = new CustomAdapter(Activity, newUsers);
             myListView.Adapter = myAdapter;
 
         }
@@ -90,7 +102,9 @@ namespace activityOne
         private void MyListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             var index = e.Position;
-        //    var myValue = stringArray[index];
+          //  AlertDialog.Builder
+            //    var myValue = stringArray[index];
         }
+
     }
 }
